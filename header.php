@@ -16,34 +16,32 @@
 <body id="myPage" <?php body_class(); ?>  data-spy="scroll" data-target=".navbar" data-offset="50">
 <header class="site-header">
  
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#myPage"><a href="<?php echo home_url() ?>"> <?php bloginfo('name')?></a></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <?php
-        //   $args=['theme_location'=>'primary']; 
-        //   wp_nav_menu();
-      
-          /* Primary navigation */
-          wp_nav_menu( array(
-            'theme_location'    => 'primary',
-            'depth'             => 2,
-            'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse',
-            'container_id'      => 'bs-example-navbar-collapse-1',
-            'menu_class'        => 'nav navbar-nav' 
-        ) );
-           ?>
-      </ul>
-    </div>
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+    </button>
+      <a class="navbar-brand" href="<?php echo home_url(); ?>">
+      <?php bloginfo('name'); ?>
+        </a>
+  </div>
+      <?php
+      wp_nav_menu( array(
+          'theme_location'    => 'primary',
+          'depth'             => 2,
+          'container'         => 'nav',
+          'container_class'   => 'collapse navbar-collapse',
+          'container_id'      => 'bs-example-navbar-collapse-1',
+          'menu_class'        => 'nav navbar-nav',
+          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'            => new WP_Bootstrap_Navwalker())
+      );
+      ?>
   </div>
 </nav>
 </header>

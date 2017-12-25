@@ -36,13 +36,16 @@ function stevan_wp_js() {
     }
     
     add_action( 'wp_enqueue_scripts', 'stevan_wp_js');
+ 
 
-register_nav_menus( 
-    array(
-        'primary'=>__('Primary Menu'),
-        'footer'=>__('Footer Menu')
-    )
-);
+function stevan_wp_theme_setup(){
+    register_nav_menus( 
+        array(
+            'primary'=>__('Primary Menu'),
+            'footer'=>__('Footer Menu')
+        ));
+}
+add_action( 'after_setup_theme','stevan_wp_theme_setup');
 
  
 // Register Custom Navigation Walker
