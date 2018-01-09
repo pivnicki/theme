@@ -14,7 +14,7 @@ get_header( );
 </header>
 
 <div class="container">
-<article class="col-md-8">
+<article class="col-12">
 <?php
   if(have_posts()){
     while(have_posts()){ 
@@ -24,9 +24,7 @@ get_header( );
     }
  }?>
  </article>
- <sidebar class="col-md-4">
-     <h2>sidebar</h2>
- </sidebar>
+
  </div>
  <?php
 get_footer();
