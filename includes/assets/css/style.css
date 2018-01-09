@@ -149,7 +149,7 @@ footer .glyphicon {
     margin-bottom: 20px;
     color: #f4511e;
 }
-.slideanim {visibility:hidden;}
+/* .slideanim {visibility:hidden;}
 .slide {
     animation-name: slide;
     -webkit-animation-name: slide;
@@ -176,7 +176,7 @@ footer .glyphicon {
     opacity: 1;
     -webkit-transform: translateY(0%);
   }
-}
+} */
 @media screen and (max-width: 768px) {
   .col-sm-4 {
     text-align: center;
